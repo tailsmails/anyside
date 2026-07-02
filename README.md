@@ -9,6 +9,14 @@ If you can move a string of text from point A to point B (via DNS TXT records, T
 
 ---
 
+## Quick Start (Copy - Paste - Enter)
+
+```sh
+apt update -y && apt install -y git clang make && if ! command -v v >/dev/null 2>&1; then git clone --depth=1 https://github.com/vlang/v && cd v && make && ./v symlink && cd ..; fi && git clone --depth=1 https://github.com/tailsmails/anyside && cd anyside && v -prod anyside.v -o anyside && ln -sf $(pwd)/anyside $PREFIX/bin/anyside
+```
+
+---
+
 ## Key Features
 
 *   **Persistent Subprocess Communication:** Launches the transport adapter process once at startup and communicates in real-time via standard streams (`stdin` and `stdout`). This bypasses the heavy CPU overhead of spawning processes on every packet.
